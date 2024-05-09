@@ -44,8 +44,8 @@ def parse_html(html_data):
 
     soup = BeautifulSoup(html_data, 'html.parser')
     table = soup.find('tbody')
-    market_caps = table.find_all('p', {'class': 'sc-4984dd93-0 kKpPOn'})
-    value_cap = table.find_all('span', {'class': 'sc-7bc56c81-1 bCdPBp'})
+    market_caps = table.find_all('p', class_='sc-4984dd93-0 kKpPOn')
+    value_cap = table.find_all('span', class_='sc-7bc56c81-1 bCdPBp')
 
     for names, values in zip(market_caps, value_cap):
         name = names.text[0: + names.text.find(" ")]
